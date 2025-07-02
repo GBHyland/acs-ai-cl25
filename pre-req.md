@@ -14,10 +14,10 @@
 3. An Ollama daemon exposing llava LLM on ```http://localhost:11434```
    - In Terminal:
 ```
-ollama pull llava
-ollama serve
+ollama pull llava   #install ollama
+ollama serve        #run ollama
 ```
-4. IDE: Laten build (Recommended IntelliJ IDEA)
+4. IDE: Latest build (Recommended IntelliJ IDEA)
    - [IntelliJ IDEA](https://www.jetbrains.com/help/idea/installation-guide.html#)
 
 
