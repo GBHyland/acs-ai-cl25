@@ -21,7 +21,12 @@ Please regard the instructor for a quick presentation on Knowledge Enrichment th
 In this hands-on demonstration we'll employ Alfresco's Transform Engine to transform PDF docs into Markdown files to prepare for ingestion.
 1. Create a directory on your machine to use as a workspace for this lesson. Open a Terminal window to that directory location. Enter the following Command:
 ```
-git clone 
+git clone https://github.com/GBHyland/acs-ai-cl25.git
 ```
+2. CD into the _transform-service_ directory:
+```
+cd transform-service/
+```
+3. 
 
 
