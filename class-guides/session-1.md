@@ -2,9 +2,9 @@
 
 ## Run Ollama
 1. Open a Terminal window and run the following commands:
-Pull the llava service:
+Pull the llava service (run this command only once):
 ```
-ollama pull llava   # run this command once
+ollama pull llava
 ```
 Run ollama once the service has completed downloading:
 ```
