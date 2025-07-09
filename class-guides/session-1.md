@@ -6,7 +6,7 @@ Pull the llava service (run this command only once):
 ```
 ollama pull llava
 ```
-Run ollama once the service has completed downloading:
+2. Run ollama once the service has completed downloading:
 ```
 ollama serve        # or `ollama run llava` in another shell
 ```
