@@ -51,7 +51,7 @@ _The application can be tested at http://localhost:8090/_. <br>
 2. Once the environment is running, process the sample PDF found within your directory:
 ```
 curl -X POST \
--F "file=../reports/veh-dmg-rep.pdf" \
+-F "file=@../reports/veh-dmg-rep.pdf" \
 "http://localhost:8090/transform?sourceMimetype=application/pdf&targetMimetype=text/markdown" \
 -o ../outputs/report.md
 ```
