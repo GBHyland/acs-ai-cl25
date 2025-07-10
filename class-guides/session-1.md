@@ -53,7 +53,7 @@ _The application can be tested at http://localhost:8090/_. <br>
 curl -X POST \
 -F "file=/reports/veh-dmg-rep.pdf" \
 "http://localhost:8090/transform?sourceMimetype=application/pdf&targetMimetype=text/markdown" \
--o ../outputs/report.md
+-o outputs/report.md
 ```
 This will send the document to the transform service and output the results to a file titled _report.md_ inside of the _outputs_ folder.
 Open the .pdf file and .md file to compare the information that was curated from the document.
