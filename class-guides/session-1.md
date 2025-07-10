@@ -42,11 +42,12 @@ cd acs-ai-cl25/transform-service/
 
 ### Run and Utilize the Transform Services
 We'll run the docker file which will leverage Alfresco's Transform Service and Docker's Docling Service to curate and transform a PDF file into a Markdown file.
+**Ensure Docker is running.**
 1. Run the Docker File:
 ```
 docker compose up --build -d
 ```
-_The application can be tested at http://localhost:8090/_
+_The application can be tested at http://localhost:8090/_. 
 2. Once the environment is running, process the sample PDF found within your directory:
 ```
 curl -X POST \
