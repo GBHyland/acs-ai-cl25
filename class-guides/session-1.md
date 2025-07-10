@@ -47,7 +47,7 @@ We'll run the docker file which will leverage Alfresco's Transform Service and D
 ```
 docker compose up --build -d
 ```
-_The application can be tested at http://localhost:8090/_. 
+_The application can be tested at http://localhost:8090/_. <br>
 2. Once the environment is running, process the sample PDF found within your directory:
 ```
 curl -X POST \
