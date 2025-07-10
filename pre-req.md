@@ -19,6 +19,8 @@ ollama serve        #run ollama
 ```
 4. IDE: Latest build (Recommended IntelliJ IDEA)
    - [IntelliJ IDEA](https://www.jetbrains.com/help/idea/installation-guide.html#)
+5. HTTPie or equivalent HTTP Request application you're familiar with (i.e.: Postman, etc)
+   - [HTTPie](https://httpie.io/download)
 
 
  

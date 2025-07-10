@@ -70,7 +70,17 @@ cd alfresco-knowledge-enrichment
 ```
 docker compose up --build
 ```
-3. Ingest the Markdown file output from the previous Transform service using this command:
+3. Ingest the Markdown file output from the previous Transform service using HTTPie (or other http application you're familiar with, i.e.: Postman, etc):
+   - In HTTPie, start a new tab and use the following specifications for a new HTTP request:
+   - **Method:** ```POST```
+   - **URL:** ```http://localhost:8080/api/ingest```
+   - _Select the Body Tab_
+   - _Configure the input to be a Multipart Form_
+   - _Add the following values to the form_
+     - **uuid:** _enter any number, i.e.: ```123-456-789```_
+     - **file:** _Use the file selector to open the Markdown file we created in earlier steps, which can be found in your local dev env at this path: ```outputs/report.md```._
+   - Press the green **SEND** button.
+
 ```
 curl --request POST \
   --url http://localhost:8080/api/ingest \
