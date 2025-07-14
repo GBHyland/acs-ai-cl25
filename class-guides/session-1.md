@@ -82,12 +82,27 @@ docker compose up --build
      - **file:** _Use the file selector to open the Markdown file we created in earlier steps, which can be found in your local dev env at this path: ```outputs/report.md```._
    - Press the green **SEND** button.
 
+Alternatively, you may ingest the Markdown file in terminal using the following command:
 ```
 curl --request POST \
   --url http://localhost:8080/api/ingest \
   --form "file=@../outputs/report.md" \
   --form uuid=1010-10238-123
 ```
+4. Set up a Chat http request:
+   - In HTTPie, start a new tab and use the following specifications for a new HTTP request:
+     - **Method:** ```POST```
+      - **URL:** ```http://localhost:8080/api/chat```
+      - _Select the Body Tab_
+      - _Configure the input to be JSON Text_
+      - _Add the following values to the form_
+      - In the Body input, paste the following JSON, then press the green **SEND** button.
+```
+{"message":"How much damage is there to the vehicle?"}
+```
+Review the JSON resposne. You should get a JSON reply that includes a response to the question. The reply will also include a document object with an array of elements that are relative to the question asked. 
+
+
 
 
 
