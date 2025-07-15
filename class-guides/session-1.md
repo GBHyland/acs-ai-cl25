@@ -20,11 +20,13 @@ Please regard the instructor for a quick presentation on Knowledge Enrichment th
 ## Alfresco Document Transformation - Hands-On
 In this hands-on demonstration we'll employ Alfresco's Transform Engine to transform PDF docs into Markdown files to prepare for ingestion.
 **The Process Architecture:**
-| **Process**   | **Service**   |
-| ---           | ---           |
-| Alfresco T-Engine | [T-Engine](transform-service/src/main/java/org/alfresco/transform/MarkdownEngine.java) |
-| Alfresco Markdown Transformer | [Transformer](transform-service/src/main/java/org/alfresco/transform/transformer/MarkdownTransformer.java) |
-| Docling | [Docing Service](transform-service/src/main/java/org/alfresco/transform/service/DoclingService.java) |
+| **Process**   | **Purpose**   | **Service**   |
+| ---           | ---           | ---           |
+| Compose File  | Deploys Alfresco Service  | [Compose.yml](../transform-service/compose.yaml)  |
+| Docker File   | Builds docker image | [Docker File](../transform-service/Dockerfile)  |
+| Alfresco T-Engine | Transform PDF docs to Markdown  | [T-Engine](../transform-service/src/main/java/org/alfresco/transform/MarkdownEngine.java) |
+| Alfresco Markdown Transformer | Deploys the T-Engine | [Transformer](../transform-service/src/main/java/org/alfresco/transform/transformer/MarkdownTransformer.java) |
+| Docling Service | Document Parsing | [Docing Service](../transform-service/src/main/java/org/alfresco/transform/service/DoclingService.java) |
 
 
 ### Set Up Your Local Dev Environment
