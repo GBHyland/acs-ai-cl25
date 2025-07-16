@@ -63,7 +63,7 @@ Open the .pdf file and .md file to compare the information that was curated from
 
 ### Run and Utilize the RAG Service
 This next step will deploy a a drop-in service that will ingest Markdown files, store chunks & captions in Elasticsearch vector search, and answers questions with retrieval-augmented generation (RAG) powered by local LLM(s).
-This service utilizes [Docker Model Runner](https://docs.docker.com/ai/model-runner/) to provide a local embedding service. 
+This service utilizes [Docker Model Runner](https://docs.docker.com/ai/model-runner/) to provide a local embedding service.  <br>
 **The Architecture:**
 | **Process**   | **Purpose**   | **Service**   |
 | ---           | ---           | ---           |
