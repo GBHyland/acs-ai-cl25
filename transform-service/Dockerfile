@@ -1,4 +1,5 @@
 # syntax=docker/dockerfile:1.4
+# --- Establishing a Maven project using a provided pom file. 
 FROM maven:3.9-eclipse-temurin-17 AS build
 WORKDIR /workspace
 

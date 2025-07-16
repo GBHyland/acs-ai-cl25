@@ -19,7 +19,7 @@ Please regard the instructor for a quick presentation on Knowledge Enrichment th
 
 ## Alfresco Document Transformation - Hands-On
 In this hands-on demonstration we'll employ Alfresco's Transform Engine to transform PDF docs into Markdown files to prepare for ingestion.
-**The Process Architecture:**
+**The Architecture:**
 | **Process**   | **Purpose**   | **Service**   |
 | ---           | ---           | ---           |
 | Compose File  | Deploys Alfresco Service  | [Compose.yml](../transform-service/compose.yaml)  |
@@ -61,14 +61,22 @@ This will send the document to the transform service and output the results to a
 Open the .pdf file and .md file to compare the information that was curated from the document.
 
 
-### Run the Utilize the RAG Service
+### Run and Utilize the RAG Service
 This next step will deploy a a drop-in service that will ingest Markdown files, store chunks & captions in Elasticsearch vector search, and answers questions with retrieval-augmented generation (RAG) powered by local LLM(s).
-This service utilizes [Docker Model Runner](https://docs.docker.com/ai/model-runner/) to provide a local embedding service.
-1. Change local directories in Terminal to the Knledge Enrichment directory using the following commands:
-```
-cd ..
-cd alfresco-knowledge-enrichment
-```
+This service utilizes [Docker Model Runner](https://docs.docker.com/ai/model-runner/) to provide a local embedding service. 
+**The Architecture:**
+| **Process**   | **Purpose**   | **Service**   |
+| ---           | ---           | ---           |
+| Compose File  | Deploys Alfresco Service  | [Compose.yml](../alfresco-knowledge-enrichment/compose.yaml)  |
+| Docker File   | Builds docker image | [Docker File](../alfresco-knowledge-enrichment/Dockerfile)  |
+| Ingestion Controller | Engages RAG Ingestion Service to ingest & store data  | [T-Engine](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/api/IngestController.java) |
+| RAG Ingestion Service | Stores chunks as vectors  | [T-Engine](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/service/RagIngestService.java) |
+| Chat Controller | Engages RAG Query Service to enable chat | [Transformer](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/api/ChatController.java) |
+| RAG Query Service | Returns chat query against stored data | [Transformer](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/api/ChatController.java) |
+
+
+### Build the RAG Service Environment 
+1. Open a new Terminal tab in the following directory ```/alfresco-knowledge-enrichment```.
 2. Run the Docker file:
 ```
 docker compose up --build

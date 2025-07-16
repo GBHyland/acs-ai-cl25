@@ -1,3 +1,4 @@
+## Executes the Dockerfile and establishes a spring AI Ollama environment running on port 8090. Also creates a health check process that runs every 30 seconds. 
 services:
   transform-md:
     build:
