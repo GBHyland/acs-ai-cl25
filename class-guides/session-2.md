@@ -11,96 +11,53 @@ In this hands-on demonstration we'll employ Java environment to that will levera
 **The Architecture:**
 | **Process**   | **Purpose**   | **Service**   |
 | ---           | ---           | ---           |
-| POPM XML file  | Establishes the Java Environment  | [Compose.yml](../knowledge-enrichment-api/pom.xml)  |
-| Application Yaml File   | Determine's application properties | [Docker File](../knowledge-enrichment-api/src/main/resources/application.yaml)  |
-| Alfresco T-Engine | Transform PDF docs to Markdown  | [T-Engine (java)](../transform-service/src/main/java/org/alfresco/transform/MarkdownEngine.java) |
-| Alfresco Markdown Transformer | Deploys the T-Engine | [Transformer (java)](../transform-service/src/main/java/org/alfresco/transform/transformer/MarkdownTransformer.java) |
-| Docling Service | Document Parsing | [Docing Service](../transform-service/src/main/java/org/alfresco/transform/service/DoclingService.java) |
-
+| POPM XML file  | Establishes the Java Environment  | [pom.xml](../knowledge-enrichment-api/pom.xml)  |
+| Application Yaml File   | Determine's application properties | [application file](../knowledge-enrichment-api/src/main/resources/application.yaml)  |
+| Base API Java File   | Handles basic API requests | [Application.java](../knowledge-enrichment-api/src/main/java/org/alfresco/ke/contextenrichment/)  |
+- add java files here
 
 ### Set Up Your Local Dev Environment
-Create a local working direcroty and clone this reporitory.
-1. Create a directory on your machine to use as a workspace for this lesson.  
-2. Open a Terminal window to that directory location.
-3. Enter the following Command to clone this repository:
+CD into the knowledge enrichment API directory:
+1. Open a new terminal window (or tab) into the fllowing directory: ```/knowledge-enrichment-api```.  
+2. Execute the following command to run the Java services:
 ```
-git clone https://github.com/GBHyland/acs-ai-cl25.git
-```
-4. CD into the _transform-service_ directory:
-```
-cd acs-ai-cl25/transform-service/
+./run.sh
 ```
 
-### Run and Utilize the Transform Services
-We'll run the docker file which will leverage Alfresco's Transform Service and Docker's Docling Service to curate and transform a PDF file into a Markdown file.
-**Ensure Docker is running.**
-1. Run the Docker File:
-```
-docker compose up --build -d
-```
-_The application can be tested at http://localhost:8090/_. <br>
-2. Once the environment is running, process the sample PDF found within your directory:
-```
-curl -X POST \
--F "file=@../reports/veh-dmg-rep.pdf" \
-"http://localhost:8090/transform?sourceMimetype=application/pdf&targetMimetype=text/markdown" \
--o ../outputs/report.md
-```
-This will send the document to the transform service and output the results to a file titled _report.md_ inside of the _outputs_ folder.
-Open the .pdf file and .md file to compare the information that was curated from the document.
 
+### Connect & Send Queries to the Knowledge Enrichment APIs:
 
-### Run and Utilize the RAG Service
-This next step will deploy a a drop-in service that will ingest Markdown files, store chunks & captions in Elasticsearch vector search, and answers questions with retrieval-augmented generation (RAG) powered by local LLM(s).
-This service utilizes [Docker Model Runner](https://docs.docker.com/ai/model-runner/) to provide a local embedding service.  <br>
-**The Architecture:**
-| **Process**   | **Purpose**   | **Service**   |
-| ---           | ---           | ---           |
-| Compose File  | Deploys Alfresco Service  | [Compose.yml](../alfresco-knowledge-enrichment/compose.yaml)  |
-| Docker File   | Builds docker image | [Docker File](../alfresco-knowledge-enrichment/Dockerfile)  |
-| Ingestion Controller | Engages RAG Ingestion Service to ingest & store data  | [Ingestion Controller (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/api/IngestController.java) |
-| RAG Ingestion Service | Stores chunks as vectors  | [RAG Ingestion Service (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/service/RagIngestService.java) |
-| Chat Controller | Engages RAG Query Service to enable chat | [Chat Controller (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/api/ChatController.java) |
-| RAG Query Service | Returns chat query against stored data | [RAG Query Service (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/api/ChatController.java) |
-
-
-### Build the RAG Service Environment 
-1. Open a new Terminal tab in the following directory ```/alfresco-knowledge-enrichment```.
-2. Run the Docker file:
-```
-docker compose up --build
-```
-3. Ingest the Markdown file output from the previous Transform service using HTTPie (or other http application you're familiar with, i.e.: Postman, etc):
-   - In HTTPie, start a new tab and use the following specifications for a new HTTP request:
-   - **Method:** ```POST```
-   - **URL:** ```http://localhost:8080/api/ingest```
-   - _Select the Body Tab_
-   - _Configure the input to be a Multipart Form_
-   - _Add the following values to the form_
-     - **uuid:** _enter any number, i.e.: ```123-456-789```_
-     - **file:** _Use the file selector to open the Markdown file we created in earlier steps, which can be found in your local dev env at this path: ```outputs/report.md```._
+Get a summarization of services from the _available_actions_ api:
+1. In HTTPie, start a new tab and use the following specifications for a new HTTP request:
+   - **Method:** ```GET```
+   - **URL:** ```http://localhost:8080/context/available_actions```
    - Press the green **SEND** button.
+You should receive a JSON array reply of the available actions you may perform that should look like the following:
+```
+[
+  "image-description",
+  "image-metadata-generation",
+  "text-metadata-generation",
+  "text-classification",
+  "text-summarization",
+  "image-classification",
+  "image-embeddings",
+  "text-embeddings",
+  "named-entity-recognition-image",
+  "named-entity-recognition-text"
+]
+```
 
-Alternatively, you may ingest the Markdown file in terminal using the following command:
-```
-curl --request POST \
-  --url http://localhost:8080/api/ingest \
-  --form "file=@../outputs/report.md" \
-  --form uuid=1010-10238-123
-```
-4. Set up a Chat http request:
-   - In HTTPie, start a new tab and use the following specifications for a new HTTP request:
+Send a document for Summarization:
+2. In HTTPie, start a new tab and use the following specifications for a new HTTP request:
      - **Method:** ```POST```
-      - **URL:** ```http://localhost:8080/api/chat```
+      - **URL:** ```http://localhost:8080/context/upload```
       - _Select the Body Tab_
-      - _Configure the input to be JSON Text_
-      - _Add the following values to the form_
-      - In the Body input, paste the following JSON, then press the green **SEND** button.
-```
-{"message":"How much damage is there to the vehicle?"}
-```
-Review the JSON resposne. You should get a JSON reply that includes a response to the question. The reply will also include a document object with an array of elements that are relative to the question asked. 
-
+      - _Configure the input to be a Multipart Form_
+      - _Add a key pair value to the form titled ```actions``` with the value of ```text-summarization```_
+      - _Add a key pair value to the form titled ```file```.
+      - _Use the file selector to navigate to the ```reports``` folder located in the root of the cloned repository and upload the file titled: ```veh_dmg_rep.pdf```_.
+      - Press the green **SEND** button.
 
 
 
