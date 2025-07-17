@@ -2,17 +2,17 @@
 
 
 ## Hyland Knowledge Enrichment Presentation
-Please regard the instructor for a quick presentation on Knowledge Enrichment that will provide baseline knowdge of Knowledge Enrichment, including the process and architecture of this session. 
+Please regard the instructor for a quick presentation that will provide essential knowledge of Hyland's SaaS Knowledge Enrichment API product. 
 - If you continue on your own, please do so at your own risk and wait for the instructor to catch up if you run into any issues.
 
 
 ## Alfresco Document Transformation - Hands-On
-In this hands-on demonstration we'll employ Alfresco's Transform Engine to transform PDF docs into Markdown files to prepare for ingestion.
+In this hands-on demonstration we'll employ Java environment to that will leverage Hyland's Knowledge Enrichment APIs to ingest, curate, and X our claims document.
 **The Architecture:**
 | **Process**   | **Purpose**   | **Service**   |
 | ---           | ---           | ---           |
-| Compose File  | Deploys Alfresco Service  | [Compose.yml](../transform-service/compose.yaml)  |
-| Docker File   | Builds docker image | [Docker File](../transform-service/Dockerfile)  |
+| POPM XML file  | Establishes the Java Environment  | [Compose.yml](../knowledge-enrichment-api/pom.xml)  |
+| Application Yaml File   | Determine's application properties | [Docker File](../knowledge-enrichment-api/src/main/resources/application.yaml)  |
 | Alfresco T-Engine | Transform PDF docs to Markdown  | [T-Engine (java)](../transform-service/src/main/java/org/alfresco/transform/MarkdownEngine.java) |
 | Alfresco Markdown Transformer | Deploys the T-Engine | [Transformer (java)](../transform-service/src/main/java/org/alfresco/transform/transformer/MarkdownTransformer.java) |
 | Docling Service | Document Parsing | [Docing Service](../transform-service/src/main/java/org/alfresco/transform/service/DoclingService.java) |

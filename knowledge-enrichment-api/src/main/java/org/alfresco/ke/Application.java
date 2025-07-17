@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Entry point for the Knowledge‑Enrichment demo translated from the original Flask implementation.
+ * Entry point for the Knowledge‑Enrichment API.
  */
 @SpringBootApplication
 public class Application {
