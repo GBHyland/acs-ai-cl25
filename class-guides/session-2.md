@@ -1,18 +1,7 @@
-# Alfresco Document Transorm & Ingestion Service - Hands-on
-
-## Run Ollama
-1. Open a Terminal window and run the following commands:
-Pull the llava service (run this command only once):
-```
-ollama pull llava
-```
-2. Run ollama once the service has completed downloading:
-```
-ollama serve        # or `ollama run llava` in another shell
-```
+# Hyland Knowledge Enrichment Service
 
 
-## Knowledge Enrichment Presentation
+## Hyland Knowledge Enrichment Presentation
 Please regard the instructor for a quick presentation on Knowledge Enrichment that will provide baseline knowdge of Knowledge Enrichment, including the process and architecture of this session. 
 - If you continue on your own, please do so at your own risk and wait for the instructor to catch up if you run into any issues.
 
