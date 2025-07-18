@@ -50,14 +50,14 @@ You should receive a JSON array reply of the available actions you may perform t
 
 **Send a document for Summarization:**
 2. In HTTPie, start a new tab and use the following specifications for a new HTTP request:
-     - **Method:** ```POST```
-      - **URL:** ```http://localhost:8080/context/upload```
-      - _Select the Body Tab_
-      - _Configure the input to be a Multipart Form_
-      - _Add a key pair value to the form titled ```actions``` with the value of ```text-summarization```_
-      - _Add a key pair value to the form titled ```file```.
-      - _Use the file selector to navigate to the ```reports``` folder located in the root of the cloned repository and upload the file titled: ```veh_dmg_rep.pdf```_.
-      - Press the green **SEND** button.
+   - **Method:** ```POST```
+   - **URL:** ```http://localhost:8080/context/upload```
+   - _Select the Body Tab_
+   - _Configure the input to be a Multipart Form_
+   - _Add a key pair value to the form titled ```actions``` with the value of ```text-summarization```_
+   - _Add a key pair value to the form titled ```file```.
+   - _Use the file selector to navigate to the ```reports``` folder located in the root of the cloned repository and upload the file titled: ```veh_dmg_rep.pdf```_.
+   - Press the green **SEND** button.
 Once successfully executed, you'll get a JSON return of the "jobId" key pair value that looks like below. Keep this tab open, as you'll need to use that value in the next step.
 ```
 {
@@ -67,9 +67,9 @@ Once successfully executed, you'll get a JSON return of the "jobId" key pair val
 
 **Get a summarixation of the uploaded document.**
 3. In HTTPie, start a new tab and use the following specifications for a new HTTP request:
-     - **Method:** ```GET```
-      - **URL:** ```http://localhost:8080/context/results/``` **Add the "jobId" value you received from the previous step to this url _(ex: http://localhost:8080/context/results/29cf3e0f-0145-4457-abc9-3e94fe83e886)_**
-      - Press the green **SEND** button.
+   - **Method:** ```GET```
+   - **URL:** ```http://localhost:8080/context/results/``` **Add the "jobId" value you received from the previous step to this url _(ex: http://localhost:8080/context/results/29cf3e0f-0145-4457-abc9-3e94fe83e886)_**
+   - Press the green **SEND** button.
 This request should return a JSON array containing a status. If the status is 'PROCESSING', then wait and submit the request again every 30 seconds until you get a status of 'SUCCESS' and a summarization of the document.
 A completed request will look like this:
 ```
@@ -103,23 +103,23 @@ A completed request will look like this:
 
 **Upload a document for Data Curation:**
 4. In HTTPie, start a new tab and use the following specifications for a new HTTP request:
-     - **Method:** ```POST```
-      - **URL:** ```http://localhost:8080/data-curation/upload```
-      - _Select the Body Tab_
-      - _Configure the input to be a Multipart Form_
-      - _Add a key pair value to the form titled ```normalization``` with the value of ```true```_
-      - _Add a key pair value to the form titled ```chunking``` with the value of ```true```_
-      - _Add a key pair value to the form titled ```embedding``` with the value of ```true```_
-      - _Add a key pair value to the form titled ```file```.
-      - _Use the file selector to navigate to the ```reports``` folder located in the root of the cloned repository and upload the file titled: ```veh_dmg_rep.pdf```_.
-      - Press the green **SEND** button.
+   - **Method:** ```POST```
+   - **URL:** ```http://localhost:8080/data-curation/upload```
+   - _Select the Body Tab_
+   - _Configure the input to be a Multipart Form_
+   - _Add a key pair value to the form titled ```normalization``` with the value of ```true```_
+   - _Add a key pair value to the form titled ```chunking``` with the value of ```true```_
+   - _Add a key pair value to the form titled ```embedding``` with the value of ```true```_
+   - _Add a key pair value to the form titled ```file```.
+   - _Use the file selector to navigate to the ```reports``` folder located in the root of the cloned repository and upload the file titled: ```veh_dmg_rep.pdf```_.
+   - Press the green **SEND** button.
 This request will return a JSON of values that contain the "jobId", "status", and a "getURL". You'll need the "jobID" for the next step.
 
 **Get the results from the Curation Upload & Embedding:**
 5. In HTTPie, start a new tab and use the following specifications for a new HTTP request:
-     - **Method:** ```GET```
-      - **URL:** ```http://localhost:8080/data-curation/poll_results/``` **Add the "jobId" value you received from the previous step to this url _(ex: http://localhost:8080/data-curation/poll_results/29cf3e0f-0145-4457-abc9-3e94fe83e886)_**
-      - Press the green **SEND** button.
+   - **Method:** ```GET```
+   - **URL:** ```http://localhost:8080/data-curation/poll_results/``` **Add the "jobId" value you received from the previous step to this url _(ex: http://localhost:8080/data-curation/poll_results/29cf3e0f-0145-4457-abc9-3e94fe83e886)_**
+   - Press the green **SEND** button.
 This request will return a JSON response that will contain the curated Markdown, which will include text chunks and vector embeddings. Also notice that location arrays are provided, indicating where in the document the data chunk resides.
 
 
