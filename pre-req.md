@@ -15,7 +15,6 @@
    - In Terminal:
 ```
 ollama pull llava   #install ollama
-ollama serve        #run ollama
 ```
 4. IDE: Latest build (Recommended IntelliJ IDEA)
    - [IntelliJ IDEA](https://www.jetbrains.com/help/idea/installation-guide.html#)

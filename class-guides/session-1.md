@@ -2,7 +2,7 @@
 
 ## Run Ollama
 1. Open a Terminal window and run the following commands:
-Pull the llava service (run this command only once):
+Pull the llava service (run this command ** if you did not do this as a pre-requisite** and only run it once):
 ```
 ollama pull llava
 ```
