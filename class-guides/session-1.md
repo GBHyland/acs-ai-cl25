@@ -114,6 +114,7 @@ Review the JSON resposne. You should get a JSON reply that includes a response t
 
 
 
-
+### Session 2: Hyland Knowledge Enrichment API Service
+Navigate to [this guide](/session-2.md) once this Session is completed.
 
 

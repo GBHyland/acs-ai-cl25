@@ -1,4 +1,4 @@
-# Hyland Knowledge Enrichment Service
+# Hyland Knowledge Enrichment API Service
 
 
 ## Hyland Knowledge Enrichment Presentation
