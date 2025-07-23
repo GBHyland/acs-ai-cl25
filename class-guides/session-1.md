@@ -85,9 +85,7 @@ docker compose up --build
 | ---           | ---           | ---           |
 | Compose File  | Deploys Alfresco Service  | [Compose.yml](../alfresco-knowledge-enrichment/compose.yaml)  |
 | Docker File   | Builds docker image | [Docker File](../alfresco-knowledge-enrichment/Dockerfile)  |
-<!-- | Ingestion Controller | Engages RAG Ingestion Service to ingest & store data  | [Ingestion Controller (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/api/IngestController.java) | -->
 | RAG Ingestion Service | Stores chunks as vectors  | [RAG Ingestion Service (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/service/RagIngestService.java) |
-<!-- | Chat Controller | Engages RAG Query Service to enable chat | [Chat Controller (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/api/ChatController.java) |-->
 | RAG Query Service | Returns chat query against stored data | [RAG Query Service (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/service/RagQueryService.java) |
 
 
