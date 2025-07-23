@@ -37,7 +37,7 @@ cd acs-ai-cl25/transform-service/
 ### Run and Utilize the Transform Services
 We'll run the docker file which will leverage Alfresco's Transform Service and Docker's Docling Service to curate and transform a PDF file into a Markdown file.
 **Ensure Docker is running.**
-1. Run the Docker File:
+Build the Docker File:
 ```
 docker compose up --build -d
 ```
@@ -54,7 +54,7 @@ _The application can be tested at http://localhost:8090/_. <br>
 <!-- | Docling Service | Document Parsing | [Docing Service](../transform-service/src/main/java/org/alfresco/transform/service/DoclingService.java) | -->
 
 **Process the PDF to be transferred to Markdown**
-1. Once the environment is running, process the sample PDF found within your directory:
+Once the environment is running, process the sample PDF found within your directory:
 ```
 curl -X POST \
 -F "file=@../reports/john-doe-claim.pdf" \
@@ -124,7 +124,7 @@ Review the JSON resposne. You should get a JSON reply that includes a response t
 
 
 ### Stop Your Enviroments
-1. In each Terminal window/tab, stop the environments by pressing CTRL+C, or using the command below:
+In each Terminal window/tab, stop the environments by pressing CTRL+C, or using the command below:
 ```
 docker compose down
 ```
