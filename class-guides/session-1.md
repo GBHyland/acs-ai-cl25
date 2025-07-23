@@ -113,8 +113,14 @@ curl --request POST \
 Review the JSON resposne. You should get a JSON reply that includes a response to the question. The reply will also include a document object with an array of elements that are relative to the question asked. 
 
 
+### Stop Your Enviroments
+1. In each Terminal window/tab, stop the environments by pressing CTRL+C, or using the command below:
+```
+docker compose down
+```
+
 
 ### Session 2: Hyland Knowledge Enrichment API Service
-Navigate to [this guide](/session-2.md) once this Session is completed.
+Navigate to [this guide](session-2.md) once this Session is completed.
 
 
