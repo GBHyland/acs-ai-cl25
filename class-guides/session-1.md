@@ -19,14 +19,6 @@ Please regard the instructor for a quick presentation on Knowledge Enrichment th
 
 ## Alfresco Document Transformation - Hands-On
 In this hands-on demonstration we'll employ Alfresco's Transform Engine to transform PDF docs into Markdown files to prepare for ingestion.
-**The Architecture:**
-| **Process**   | **Purpose**   | **Service**   |
-| ---           | ---           | ---           |
-| Compose File  | Deploys Alfresco Service  | [Compose.yml](../transform-service/compose.yaml)  |
-| Docker File   | Builds docker image | [Docker File](../transform-service/Dockerfile)  |
-| Alfresco T-Engine | Transform PDF docs to Markdown  | [T-Engine (java)](../transform-service/src/main/java/org/alfresco/transform/MarkdownEngine.java) |
-| Alfresco Markdown Transformer | Deploys the T-Engine | [Transformer (java)](../transform-service/src/main/java/org/alfresco/transform/transformer/MarkdownTransformer.java) |
-| Docling Service | Document Parsing | [Docing Service](../transform-service/src/main/java/org/alfresco/transform/service/DoclingService.java) |
 
 
 ### Set Up Your Local Dev Environment
@@ -50,7 +42,19 @@ We'll run the docker file which will leverage Alfresco's Transform Service and D
 docker compose up --build -d
 ```
 _The application can be tested at http://localhost:8090/_. <br>
-2. Once the environment is running, process the sample PDF found within your directory:
+
+
+**The Architecture:**
+| **Process**   | **Purpose**   | **Service**   |
+| ---           | ---           | ---           |
+| Compose File  | Deploys Alfresco Service  | [Compose.yml](../transform-service/compose.yaml)  |
+| Docker File   | Builds docker image | [Docker File](../transform-service/Dockerfile)  |
+| Alfresco T-Engine | Transform PDF docs to Markdown  | [T-Engine (java)](../transform-service/src/main/java/org/alfresco/transform/MarkdownEngine.java) |
+| Alfresco Markdown Transformer | Deploys the T-Engine | [Transformer (java)](../transform-service/src/main/java/org/alfresco/transform/transformer/MarkdownTransformer.java) |
+<!-- | Docling Service | Document Parsing | [Docing Service](../transform-service/src/main/java/org/alfresco/transform/service/DoclingService.java) | -->
+
+**Process the PDF to be transferred to Markdown**
+1. Once the environment is running, process the sample PDF found within your directory:
 ```
 curl -X POST \
 -F "file=@../reports/john-doe-claim.pdf" \
@@ -61,18 +65,12 @@ This will send the document to the transform service and output the results to a
 Open the .pdf file and .md file to compare the information that was curated from the document.
 
 
+---
+
 ### Run and Utilize the RAG Service
 This next step will deploy a a drop-in service that will ingest Markdown files, store chunks & captions in Elasticsearch vector search, and answers questions with retrieval-augmented generation (RAG) powered by local LLM(s).
 This service utilizes [Docker Model Runner](https://docs.docker.com/ai/model-runner/) to provide a local embedding service.  <br>
-**The Architecture:**
-| **Process**   | **Purpose**   | **Service**   |
-| ---           | ---           | ---           |
-| Compose File  | Deploys Alfresco Service  | [Compose.yml](../alfresco-knowledge-enrichment/compose.yaml)  |
-| Docker File   | Builds docker image | [Docker File](../alfresco-knowledge-enrichment/Dockerfile)  |
-| Ingestion Controller | Engages RAG Ingestion Service to ingest & store data  | [Ingestion Controller (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/api/IngestController.java) |
-| RAG Ingestion Service | Stores chunks as vectors  | [RAG Ingestion Service (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/service/RagIngestService.java) |
-| Chat Controller | Engages RAG Query Service to enable chat | [Chat Controller (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/api/ChatController.java) |
-| RAG Query Service | Returns chat query against stored data | [RAG Query Service (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/api/ChatController.java) |
+
 
 
 ### Build the RAG Service Environment 
@@ -81,7 +79,21 @@ This service utilizes [Docker Model Runner](https://docs.docker.com/ai/model-run
 ```
 docker compose up --build
 ```
-3. Ingest the Markdown file output from the previous Transform service using HTTPie (or other http application you're familiar with, i.e.: Postman, etc):
+
+**The Architecture:**
+| **Process**   | **Purpose**   | **Service**   |
+| ---           | ---           | ---           |
+| Compose File  | Deploys Alfresco Service  | [Compose.yml](../alfresco-knowledge-enrichment/compose.yaml)  |
+| Docker File   | Builds docker image | [Docker File](../alfresco-knowledge-enrichment/Dockerfile)  |
+<!-- | Ingestion Controller | Engages RAG Ingestion Service to ingest & store data  | [Ingestion Controller (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/api/IngestController.java) | -->
+| RAG Ingestion Service | Stores chunks as vectors  | [RAG Ingestion Service (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/service/RagIngestService.java) |
+<!-- | Chat Controller | Engages RAG Query Service to enable chat | [Chat Controller (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/api/ChatController.java) |-->
+| RAG Query Service | Returns chat query against stored data | [RAG Query Service (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/service/RagQueryService.java) |
+
+
+**Document Ingestion:**
+Ingest the Markdown file from step 1 and send chat requests.
+1. Ingest the Markdown file output from the previous Transform service using HTTPie (or other http application you're familiar with, i.e.: Postman, etc):
    - In HTTPie, start a new tab and use the following specifications for a new HTTP request:
    - **Method:** ```POST```
    - **URL:** ```http://localhost:8080/api/ingest```
@@ -99,7 +111,7 @@ curl --request POST \
   --form "file=@../outputs/report.md" \
   --form uuid=1010-10238-123
 ```
-4. Set up a Chat http request:
+2. Set up a Chat http request:
    - In HTTPie, start a new tab and use the following specifications for a new HTTP request:
      - **Method:** ```POST```
       - **URL:** ```http://localhost:8080/api/chat```
