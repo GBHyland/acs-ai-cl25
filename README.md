@@ -8,7 +8,8 @@ Before getting started ensure you have completed this [prerequisite checklist](.
 
 
 ## Pre-Class Checklist:
-**Open a Terminal window and run the following commands to ensure you have the required installations. If you are missing anything, please review the [prerequisite checklist](./pre-req.md).
+**Before the session starts, let's ensure everyone has the essentials.** 
+Open a Terminal window and run the following commands to ensure you have the required installations. If you are missing anything, please review the [prerequisite checklist](./pre-req.md).
 
 **Check Java**
 ```
