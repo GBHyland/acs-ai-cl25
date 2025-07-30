@@ -1,0 +1,3 @@
+org/alfresco/ai/summarize/rest/SummarizationController.class
+org/alfresco/ai/summarize/App.class
+org/alfresco/ai/summarize/service/PdfSummarizationService.class

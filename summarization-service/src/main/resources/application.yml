@@ -1,0 +1,12 @@
+spring:
+  ai:
+    openai:                                      # Configure the OpenAI-compatible model provider for Docker Model Runner
+      base-url: http://localhost:12434/engines   # Base URL for the model server (e.g., Docker Model Runner exposes "/engines" endpoint)
+      api-key: nokeyrequired                     # Dummy API key; Docker Model Runner does not require authentication
+
+      init:
+        pull-model-strategy: when_missing        # Automatically pull the model if it's not already available on the server
+
+      chat:
+        options:
+          model: ai/mistral                      # Name of the model to use for chat (as exposed by the server)

@@ -34,5 +34,8 @@ _Will list the LLMs that you have installed. llava should be on the list._
 ## Session 1: Alfresco Document Transform & Ingestion
 Navigate to [this guide](/class-guides/session-1.md) to get started.
 
-## Session 2: Hyland Knowledge Enrichment API
+## Session 2: Summarization Project
 Navigate to [this guide](/class-guides/session-2.md) once Session 1 is completed.
+
+## Session 3: Hyland Knowledge Enrichment API
+Navigate to [this guide](/class-guides/session-3.md) once Session 1 is completed.
