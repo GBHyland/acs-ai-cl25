@@ -7,14 +7,15 @@ Please regard the instructor for a quick presentation that will provide essentia
 
 
 ## Alfresco Document Transformation - Hands-On
-In this hands-on session we'll deploy a Java environment that will leverage Hyland's Knowledge Enrichment APIs to ingest, curate, and X our claims document.
+In this hands-on session we'll deploy a Java environment that will leverage Hyland's Knowledge Enrichment APIs to ingest and curate our claims document.
 **The Architecture:**
 | **Process**   | **Purpose**   | **Service**   |
 | ---           | ---           | ---           |
 | POM XML file  | Establishes the Java Environment  | [pom.xml](../knowledge-enrichment-api/pom.xml)  |
 | Application Yaml File   | Determine's application properties | [application file](../knowledge-enrichment-api/src/main/resources/application.yaml)  |
 | Base API Java File   | Handles basic API requests | [Application.java](../knowledge-enrichment-api/src/main/java/org/alfresco/ke/contextenrichment/)  |
-- add java files here
+
+
 
 ### Set Up Your Local Dev Environment
 CD into the knowledge enrichment API directory:
@@ -28,7 +29,7 @@ CD into the knowledge enrichment API directory:
 ### Connect & Send Queries to the Knowledge Enrichment APIs:
 
 **Get a summarization of services from the _available_actions_ api:**
-1. In HTTPie, start a new tab and use the following specifications for a new HTTP request:
+In HTTPie, start a new tab and use the following specifications for a new HTTP request:
    - **Method:** ```GET```
    - **URL:** ```http://localhost:8080/context/available_actions```
    - Press the green **SEND** button.
@@ -49,7 +50,7 @@ You should receive a JSON array reply of the available actions you may perform t
 ```
 
 **Send a document for Summarization:**
-2. In HTTPie, start a new tab and use the following specifications for a new HTTP request:
+In HTTPie, start a new tab and use the following specifications for a new HTTP request:
    - **Method:** ```POST```
    - **URL:** ```http://localhost:8080/context/upload```
    - _Select the Body Tab_
@@ -65,8 +66,9 @@ Once successfully executed, you'll get a JSON return of the "jobId" key pair val
 }
 ```
 
+
 **Get a summarixation of the uploaded document.**
-3. In HTTPie, start a new tab and use the following specifications for a new HTTP request:
+1. In HTTPie, start a new tab and use the following specifications for a new HTTP request:
    - **Method:** ```GET```
    - **URL:** ```http://localhost:8080/context/results/``` **Add the "jobId" value you received from the previous step to this url _(ex: http://localhost:8080/context/results/29cf3e0f-0145-4457-abc9-3e94fe83e886)_**
    - Press the green **SEND** button.
@@ -100,9 +102,18 @@ A completed request will look like this:
   "inProgress": false
 }
 ```
+2. Open a new Terminal window/tab at the root directory of the _(acs-ai-cl25)_.
+3. Copy the following code block and paste into your terminal window **(DO NOT SUBMIT THE COMMAND YET)**:
+```
+echo "your copied text" > summary-comparison-tool/examples/keapi.txt
+```
+4. Go back into your HTTPie application and copy the text only to your clipboard from the JSON summary reply.  
+5. Paste the copied text over the **"your copied text"** in the Terminal window, keeping the quotes. Run the command. 
+   - This will create a text file of the summary into the **summary-comparison-tool** directory, which we'll use later.  
+
 
 **Upload a document for Data Curation:**
-4. In HTTPie, start a new tab and use the following specifications for a new HTTP request:
+In HTTPie, start a new tab and use the following specifications for a new HTTP request:
    - **Method:** ```POST```
    - **URL:** ```http://localhost:8080/data-curation/upload```
    - _Select the Body Tab_
@@ -115,13 +126,15 @@ A completed request will look like this:
    - Press the green **SEND** button.
 This request will return a JSON of values that contain the "jobId", "status", and a "getURL". You'll need the "jobID" for the next step.
 
+
 **Get the results from the Curation Upload & Embedding:**
-5. In HTTPie, start a new tab and use the following specifications for a new HTTP request:
+In HTTPie, start a new tab and use the following specifications for a new HTTP request:
    - **Method:** ```GET```
    - **URL:** ```http://localhost:8080/data-curation/poll_results/``` **Add the "jobId" value you received from the previous step to this url _(ex: http://localhost:8080/data-curation/poll_results/29cf3e0f-0145-4457-abc9-3e94fe83e886)_**
    - Press the green **SEND** button.
 This request will return a JSON response that will contain the curated Markdown, which will include text chunks and vector embeddings. Also notice that location arrays are provided, indicating where in the document the data chunk resides.
 
 
-
+### Next Steps: Summary Comparison Tool
+Navigate to the [session-4 guide here](./session-4.md).
 

@@ -64,6 +64,11 @@ curl -X POST \
 This will send the document to the transform service and output the results to a file titled _report.md_ inside of the _outputs_ folder.
 Open the .pdf file and .md file to compare the information that was curated from the document.
 
+Before moving on, copy the Markdown file from this directory and place it into a directory we'll use in a future lesson.
+Execute the following command:
+```
+cp ../outputs/john-doe-report.md ../summary-comparison-tool/examples/john-doe-report.md
+```
 
 ---
 
@@ -90,7 +95,7 @@ docker compose up --build
 
 
 **Document Ingestion:**
-Ingest the Markdown file from step 1 and send chat requests.
+Ingest the Markdown file and send chat requests.
 1. Ingest the Markdown file output from the previous Transform service using HTTPie (or other http application you're familiar with, i.e.: Postman, etc):
    - In HTTPie, start a new tab and use the following specifications for a new HTTP request:
    - **Method:** ```POST```
