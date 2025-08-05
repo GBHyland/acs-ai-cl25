@@ -8,7 +8,11 @@ ollama pull llava
 ```
 2. Run ollama once the service has completed downloading:
 ```
-ollama serve        # or `ollama run llava` in another shell
+ollama serve
+```
+- If you get an error stating that the address is already in use, then you're already running ollama. Use the following command if so (this will open the running LLM in this Terminal window)
+```
+ollama run llava
 ```
 
 
@@ -57,9 +61,9 @@ _The application can be tested at http://localhost:8090/_. <br>
 Once the environment is running, process the sample PDF found within your directory:
 ```
 curl -X POST \
--F "file=@../reports/john-doe-claim.pdf" \
+-F "file=@../reports/veh-dmg-rep.pdf" \
 "http://localhost:8090/transform?sourceMimetype=application/pdf&targetMimetype=text/markdown" \
--o ../outputs/john-doe-report.md
+-o ../outputs/veh-dmg-rep.md
 ```
 This will send the document to the transform service and output the results to a file titled _report.md_ inside of the _outputs_ folder.
 Open the .pdf file and .md file to compare the information that was curated from the document.
@@ -67,7 +71,7 @@ Open the .pdf file and .md file to compare the information that was curated from
 Before moving on, copy the Markdown file from this directory and place it into a directory we'll use in a future lesson.
 Execute the following command:
 ```
-cp ../outputs/john-doe-report.md ../summary-comparison-tool/examples/john-doe-report.md
+cp ../outputs/veh-dmg-rep.md ../summary-comparison-tool/examples/veh-dmg-rep.md
 ```
 
 ---

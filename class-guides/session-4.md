@@ -36,7 +36,7 @@ git clone https://github.com/neulab/BARTScore.git
 ```
 5. Execute the comparison between two previously generated markdown files compared to the original document:
 ```
-python summary_comparison.py examples/john-doe-report.md "$(cat examples/keapi.txt)" "$(cat examples/local.txt)" --detailed
+python summary_comparison.py examples/veh-dmg-rep.md "$(cat examples/keapi.txt)" "$(cat examples/local.txt)" --detailed
 ```
 You should see a logged report providing a deatiled analysis along with an overall score (the lower the numbers the better the accuracy).
 
