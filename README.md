@@ -28,7 +28,7 @@ _Should print the version of Apache Maven. 3.X is required for this lesson._
 ```
 ollama list
 ```
-_Will list the LLMs that you have installed. llava should be on the list._
+_Will list the LLMs that you have installed. llava and mistral should be listed. If not both, then visit the [prerequisite checklist](./pre-req.md) to pull any missing LLM._
 
 
 ## Session 1: Alfresco Document Transform & Ingestion
