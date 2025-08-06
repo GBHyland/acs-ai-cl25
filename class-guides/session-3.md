@@ -135,6 +135,10 @@ In HTTPie, start a new tab and use the following specifications for a new HTTP r
 This request will return a JSON response that will contain the curated Markdown, which will include text chunks and vector embeddings. Also notice that location arrays are provided, indicating where in the document the data chunk resides.
 
 
+**Stop the Environment and Close Tabs**
+You may now use the CTRL+C command in the running environment for this session to stop the environment and close out of that Terminal window/tab.
+
+
 ### Next Steps: Summary Comparison Tool
 Navigate to the [session-4 guide here](./session-4.md).
 

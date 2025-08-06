@@ -39,5 +39,9 @@ git clone https://github.com/neulab/BARTScore.git
 python summary_comparison.py examples/veh-dmg-rep.md "$(cat examples/keapi.txt)" "$(cat examples/local.txt)" --detailed
 ```
 You should see a logged report providing a deatiled analysis along with an overall score (the lower the numbers the better the accuracy).
+6. You may now stop the python virtual environment using the command below and close out of all Terminal windows/tabs.
+```
+deactivate
+```
 
 

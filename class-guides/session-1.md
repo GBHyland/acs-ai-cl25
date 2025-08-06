@@ -108,7 +108,7 @@ Ingest the Markdown file and send chat requests.
    - _Configure the input to be a Multipart Form_
    - _Add the following values to the form_
      - **uuid:** _enter any number, i.e.: ```123-456-789```_
-     - **file:** _Use the file selector to open the Markdown file we created in earlier steps, which can be found in your local dev env at this path: ```outputs/report.md```._
+     - **file:** _Use the file selector to open the Markdown file we created in earlier steps, which can be found in your local dev env at this path: ```outputs/veh-dmg-rep.md```._
    - Press the green **SEND** button.
 
 Alternatively, you may ingest the Markdown file in terminal using the following command:
@@ -127,7 +127,7 @@ curl --request POST \
       - _Add the following values to the form_
       - In the Body input, paste the following JSON, then press the green **SEND** button.
 ```
-{"message":"How much damage is there to the vehicle?"}
+{"message":"Describe the damage to the vehicle."}
 ```
 Review the JSON resposne. You should get a JSON reply that includes a response to the question. The reply will also include a document object with an array of elements that are relative to the question asked. 
 
