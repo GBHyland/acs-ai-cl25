@@ -6,16 +6,6 @@ Please regard the instructor for a quick presentation that will provide essentia
 - If you continue on your own, please do so at your own risk and wait for the instructor to catch up if you run into any issues.
 
 
-## Alfresco Document Transformation - Hands-On
-In this hands-on session we'll deploy a Java environment that will leverage Hyland's Knowledge Enrichment APIs to ingest and curate our claims document.
-**The Architecture:**
-| **Process**   | **Purpose**   | **Service**   |
-| ---           | ---           | ---           |
-| POM XML file  | Establishes the Java Environment  | [pom.xml](../knowledge-enrichment-api/pom.xml)  |
-| Application Yaml File   | Determine's application properties | [application file](../knowledge-enrichment-api/src/main/resources/application.yaml)  |
-| Base API Java File   | Handles basic API requests | [Application.java](../knowledge-enrichment-api/src/main/java/org/alfresco/ke/contextenrichment/)  |
-
-
 
 ### Set Up Your Local Dev Environment
 CD into the knowledge enrichment API directory:

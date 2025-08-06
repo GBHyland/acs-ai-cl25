@@ -2,7 +2,7 @@
 In this session we'll create a Spring Boot 3.5 microservice that transforms any PDF into a concise summary using a local Large Language Model (LLM) served through Docker Model Runner.  
 
 
-## Alfresco Document Transformation - Hands-On
+## Docker Model Runner Summarizatioin Service
 In this hands-on demonstration we'll deploy a Java environment that will leverage Docker Model Runner producing a REST API endpoint that accepts a PDF file and returns a summary without the need to send data to the cloud.  
 **The Architecture:**
 | **Process**   | **Purpose**   | **Service**   |
