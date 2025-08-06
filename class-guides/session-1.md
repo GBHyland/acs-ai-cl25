@@ -1,12 +1,7 @@
 # Alfresco Document Transorm & Ingestion Service - Hands-on
 
 ## Run Ollama
-1. Open a Terminal window and run the following commands:
-Pull the llava service (run this command ** if you did not do this as a pre-requisite** and only run it once):
-```
-ollama pull llava
-```
-2. Run ollama once the service has completed downloading:
+1. Run ollama once the service has completed downloading:
 ```
 ollama serve
 ```
@@ -139,7 +134,7 @@ docker compose down
 ```
 
 
-### Session 2: Hyland Knowledge Enrichment API Service
+### Session 2: Content Summarization Service
 Navigate to [this guide](session-2.md) once this Session is completed.
 
 
