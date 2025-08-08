@@ -33,6 +33,9 @@ git clone https://github.com/GBHyland/acs-ai-cl25.git
 cd acs-ai-cl25/transform-service/
 ```
 
+---
+
+
 ### Run and Utilize the Transform Services
 We'll run the docker file which will leverage Alfresco's Transform Service and Docker's Docling Service to curate and transform a PDF file into a Markdown file.
 **Ensure Docker is running.**
@@ -41,6 +44,10 @@ Build the Docker File:
 docker compose up --build -d
 ```
 _The application can be tested at http://localhost:8090/_. <br>
+
+
+## Ingestion & Retrieval Presentation
+Please regard the instructor for a quick presentation on the ingestion portion of this session. 
 
 
 **The Architecture:**
