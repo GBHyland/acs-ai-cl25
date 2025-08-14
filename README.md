@@ -38,4 +38,8 @@ Navigate to [this guide](/class-guides/session-1.md) to get started.
 Navigate to [this guide](/class-guides/session-2.md) once Session 1 is completed.
 
 ## Session 3: Hyland Knowledge Enrichment API
-Navigate to [this guide](/class-guides/session-3.md) once Session 1 is completed.
+Navigate to [this guide](/class-guides/session-3.md) once Session 2 is completed.
+
+## Session 4: Summary Comparison Tool
+Navigate to [this guide](/class-guides/session-4.md) once Session 3 is completed.
+
