@@ -117,8 +117,8 @@ Alternatively, you may ingest the Markdown file in terminal using the following 
 ```
 curl --request POST \
   --url http://localhost:8080/api/ingest \
-  --form "file=@../outputs/report.md" \
-  --form uuid=1010-10238-123
+  --form "file=@../outputs/veh-dmg-rep.md;type=text/markdown" \
+  --form "uuid=1010-10238-123"
 ```
 2. Set up a Chat http request:
    - In HTTPie, start a new tab and use the following specifications for a new HTTP request:
@@ -131,7 +131,7 @@ curl --request POST \
 ```
 {"message":"Describe the damage to the vehicle."}
 ```
-Review the JSON resposne. You should get a JSON reply that includes a response to the question. The reply will also include a document object with an array of elements that are relative to the question asked. 
+Review the JSON response. You should get a JSON reply that includes a response to the question. The reply will also include a document object with an array of elements that are relative to the question asked. 
 
 
 ### Stop Your Enviroments
