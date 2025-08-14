@@ -19,7 +19,7 @@ Note the architecture for this environment below.
 
 
 
-### Deploy the Python Environment
+### Deploy the Python Environment & Run Comparison Script
 In this hands-on session we'll run a Docker script that will deploy a local Python virtual environment which leverages BARTScore, a generative text evaluator, that will compare two seperate generated summaries of an original document in order to guage accuracy.
 1. Open a new terminal window (or tab) into the fllowing directory: ```/summary-comparison-tool```.  
 2. Execute the following command to create the virtual environment:
