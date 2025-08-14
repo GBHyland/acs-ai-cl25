@@ -17,7 +17,11 @@ A comprehensive evaluation tool for comparing the quality of two summaries again
 - Python 3.7+
 - PyTorch (CPU or GPU version)
 
-### Setup
+or
+
+- Docker 4.40+
+
+### Setup with local deployment
 
 1. **Clone the repository**
 ```bash
@@ -66,6 +70,33 @@ python summary_comparison.py document.md "First summary" "Second summary" --devi
 
 ```bash
 python summary_comparison.py document.md "First summary" "Second summary" --detailed
+```
+
+## Running with Docker
+
+## How to use (CPU)
+
+```bash
+docker build -t summary-compare .
+docker run --rm -v "$PWD":/work -w /work summary-compare \
+  examples/sample_document.md "First summary" "Second summary"
+```  
+
+## GPU (optional)
+
+If you want CUDA, build with the CUDA wheel index and run with NVIDIA:
+
+```bash
+docker build --build-arg TORCH_INDEX_URL=https://download.pytorch.org/whl/cu121 \
+  -t summary-compare-gpu .
+docker run --rm --gpus all -v "$PWD":/work -w /work summary-compare-gpu \
+  examples/sample_document.md "A" "B" --device cuda
+```  
+
+> Note. Docker Desktop 4.44 switched the default builder to a containerized Buildx driver. With that driver, docker build doesn’t load the image into your local image store unless you say so. When using this Docker version, following command needs to be used (build with `--load`):
+
+```bash
+docker build --load -t summary-compare .
 ```
 
 ## Example Output
