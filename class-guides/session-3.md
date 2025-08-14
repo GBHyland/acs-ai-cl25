@@ -9,8 +9,9 @@ Please regard the instructor for a quick presentation that will provide essentia
 
 ### Set Up Your Local Dev Environment
 CD into the knowledge enrichment API directory:
-1. Open a new terminal window (or tab) into the fllowing directory: ```/knowledge-enrichment-api```.  
-2. Execute the following command to run the Java services:
+1. Open a new terminal window (or tab) into the following directory: ```/knowledge-enrichment-api```.
+2. Copy the provided `.env`  file to this directory
+3. Execute the following command to run the Java services:
 ```
 ./run.sh
 ```
