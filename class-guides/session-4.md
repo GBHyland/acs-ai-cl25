@@ -5,8 +5,8 @@ In this sessioin you'll deploy a comprehensive evaluation tool for comparing the
 - **Multi-metric evaluation:** BARTScore, semantic similarity, coverage, conciseness, and factual consistency
 - **Markdown support:** Direct processing of Markdown documents with proper text extraction
 - **Flexible scoring:** Weighted combination of multiple evaluation criteria
-<!--- **GPU acceleration:** CUDA support for faster processing-->
 - **Detailed analysis:** Detailed breakdown of individual metrics, including similarities, factual consistency, and document coverage.
+<!--- **GPU acceleration:** CUDA support for faster processing-->
 
 
 ### Architecture
@@ -14,7 +14,7 @@ Note the architecture for this environment below.
 **The Architecture:**
 | **Process**   | **Purpose**   | **Service**   |
 | ---           | ---           | ---           |
-| Docker File  | Installs Python dependencies, runs Python venv, executes Python Comparison script  | [Dockerfile](../summary-comparison-tool/Dockerfile)  |
+| Docker File  | Installs Python dependencies & builds a virtual environment  | [Dockerfile](../summary-comparison-tool/Dockerfile)  |
 | Summary Comparison Python  | Processes the comparison between two docs against an original  | [summary_comparison.py](../summary-comparison-tool/summary_comparison.py)  |
 
 
