@@ -10,6 +10,7 @@ ollama serve
 ollama run llava
 ```
 
+---
 
 ## Knowledge Enrichment Presentation
 Please regard the instructor for a quick presentation on Knowledge Enrichment that will provide baseline knowdge of Knowledge Enrichment, including the process and architecture of this session. 
@@ -17,7 +18,7 @@ Please regard the instructor for a quick presentation on Knowledge Enrichment th
 
 
 ## Alfresco Document Transformation - Hands-On
-In this hands-on demonstration we'll employ Alfresco's Transform Engine to transform PDF docs into Markdown files to prepare for ingestion.
+In this hands-on demonstration we'll deploy Alfresco's Transform Engine to transform PDF docs into Markdown files to prepare for ingestion.
 
 
 ### Set Up Your Local Dev Environment
@@ -38,7 +39,7 @@ cd acs-ai-cl25/transform-service/
 
 ### Run and Utilize the Transform Services
 We'll run the docker file which will leverage Alfresco's Transform Service and Docker's Docling Service to curate and transform a PDF file into a Markdown file.
-**Ensure Docker is running.**
+**Ensure you are running the Docker Desktop application**
 Build the Docker File:
 ```
 docker compose up --build -d
