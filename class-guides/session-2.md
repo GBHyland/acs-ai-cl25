@@ -58,7 +58,7 @@ Once successfully executed, you'll get a JSON return of the "jobId" key pair val
 ```
 
 
-**Get a summarixation of the uploaded document.**
+**Get a summarization of the uploaded document.**
 1. In HTTPie, start a new tab and use the following specifications for a new HTTP request:
    - **Method:** ```GET```
    - **URL:** ```http://localhost:8080/context/results/``` **Add the "jobId" value you received from the previous step to this url _(ex: http://localhost:8080/context/results/29cf3e0f-0145-4457-abc9-3e94fe83e886)_**

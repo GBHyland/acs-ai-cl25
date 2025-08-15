@@ -14,11 +14,13 @@ In this hands-on demonstration we'll deploy a Java environment that will leverag
 
 ### Set Up Your Local Dev Environment
 CD into the PDF Summarization service directory:
+<!--
 1. Open a new terminal window (or tab) into the following directory: ```/summarization-service```.  
 2. Compile and package the Spring Boot application:
 ```bash
 mvn clean package
 ```
+-->
 2. Execute the following command to run the Java services:
 ```bash
 java -jar target/springai-pdf-summary-0.8.0.jar
