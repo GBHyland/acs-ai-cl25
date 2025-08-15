@@ -141,7 +141,7 @@ docker compose down
 ```
 
 
-### Session 2: Content Summarization Service
-Navigate to [this guide](session-2.md) once this Session is completed.
+### Next Step: Document Summarization Service
+Navigate to [this guide](session-1a.md) once this Session is completed.
 
 

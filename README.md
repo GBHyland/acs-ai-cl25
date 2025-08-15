@@ -34,12 +34,12 @@ _Will list the LLMs that you have installed. llava and mistral should be listed.
 ## Session 1: Alfresco Document Transform & Ingestion
 Navigate to [this guide](/class-guides/session-1.md) to get started.
 
-## Session 2: Summarization Project
-Navigate to [this guide](/class-guides/session-2.md) once Session 1 is completed.
+## Session 1a: Document Summarization Project
+Navigate to [this guide](/class-guides/session-1a.md) once Session 1 is completed.
 
-## Session 3: Hyland Knowledge Enrichment API
-Navigate to [this guide](/class-guides/session-3.md) once Session 2 is completed.
+## Session 2: Hyland Knowledge Enrichment API
+Navigate to [this guide](/class-guides/session-2.md) once Session 1a is completed.
 
-## Session 4: Summary Comparison Tool
-Navigate to [this guide](/class-guides/session-4.md) once Session 3 is completed.
+## Session 3: Summary Comparison Tool
+Navigate to [this guide](/class-guides/session-3.md) once Session 3 is completed.
 
