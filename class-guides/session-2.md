@@ -129,7 +129,14 @@ This request will return a JSON response that will contain the curated Markdown,
 **Stop the Environment and Close Tabs**
 You may now use the CTRL+C command in the running environment for this session to stop the environment and close out of that Terminal window/tab.
 
+---
 
-### Next Steps: Summary Comparison Tool
+### Information on Hyland's Knowledge Enrichment SaaS Service
+[Hyland Knowledge Enrichment](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Overview)
+
+
+---
+
+### Next Step: Summary Comparison Tool
 Navigate to the [session-3 guide here](./session-3.md).
 

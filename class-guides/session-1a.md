@@ -47,6 +47,7 @@ echo "your copied text" > summary-comparison-tool/examples/local.txt
    - For now, review the summary of the document for accuracy.  
 6. In the original Terminal window you opened and executed this environment, press CTRL+C to stop the running environment. You may close any Terminal tabs/windows you opened for this session.
 
+---
 
 ### Next Step: Hyland Knowledge Enrichment API
 Navigate to the [session-2 guide here](./session-3.md).

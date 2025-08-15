@@ -140,6 +140,7 @@ In each Terminal window/tab, stop the environments by pressing CTRL+C, or using 
 docker compose down
 ```
 
+---
 
 ### Next Step: Document Summarization Service
 Navigate to [this guide](session-1a.md) once this Session is completed.
