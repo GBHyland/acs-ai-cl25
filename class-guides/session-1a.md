@@ -13,7 +13,7 @@ In this hands-on demonstration we'll deploy a Java environment that will leverag
 
 
 ### Set Up Your Local Dev Environment
-CD into the PDF Summarization service directory:
+CD into the PDF Summarization service directory: ```/summarization-service```
 <!--
 1. Open a new terminal window (or tab) into the following directory: ```/summarization-service```.  
 2. Compile and package the Spring Boot application:
