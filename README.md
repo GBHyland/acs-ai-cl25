@@ -31,6 +31,15 @@ ollama list
 _Will list the LLMs that you have installed. llava and mistral should be listed. If not both, then visit the [prerequisite checklist](./pre-req.md) to pull any missing LLM._
 
 
+**Run Docker Desktop & Ensure Docker Model Runner is Enabled**
+1. Launch your Docker Desktop application.
+2. Select the settings cog wheel icon.
+3. Select _Beta Features_ from the left panel.
+4. Ensure **Enable Docker Model Runner** is selected & **Enable host-side TCP support** is also enabled.
+   - the default port should be: ```12434```
+
+---
+
 ## Session 1: Alfresco Document Transform & Ingestion
 Navigate to [this guide](/class-guides/session-1.md) to get started.
 
