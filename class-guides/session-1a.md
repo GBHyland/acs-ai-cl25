@@ -52,5 +52,5 @@ echo "your copied text" > summary-comparison-tool/examples/local.txt
 ---
 
 ### Next Step: Hyland Knowledge Enrichment API
-Navigate to the [session-2 guide here](./session-3.md).
+Navigate to the [session-2 guide here](./session-2.md).
 
