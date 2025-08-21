@@ -101,6 +101,10 @@ docker compose up --build
 | RAG Query Service | Returns chat query against stored data | [RAG Query Service (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/service/RagQueryService.java) |
 
 
+**The Process**
+![alt text](../images/transform.png "Transform Process")
+
+
 **Document Ingestion:**
 Ingest the Markdown file and send chat requests.
 1. Ingest the Markdown file output from the previous Transform service using HTTPie (or other http application you're familiar with, i.e.: Postman, etc):
