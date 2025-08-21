@@ -17,6 +17,10 @@ Please regard the instructor for a quick presentation on Knowledge Enrichment th
 - If you continue on your own, please do so at your own risk and wait for the instructor to catch up if you run into any issues.
 
 
+**The Process**
+![alt text](../images/transform.png "Transform Process")
+
+
 ## Alfresco Document Transformation - Hands-On
 In this hands-on demonstration we'll deploy Alfresco's Transform Engine to transform PDF docs into Markdown files to prepare for ingestion.
 
@@ -100,9 +104,6 @@ docker compose up --build
 | RAG Ingestion Service | Stores chunks as vectors  | [RAG Ingestion Service (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/service/RagIngestService.java) |
 | RAG Query Service | Returns chat query against stored data | [RAG Query Service (java)](../alfresco-knowledge-enrichment/src/main/java/org/alfresco/service/RagQueryService.java) |
 
-
-**The Process**
-![alt text](../images/transform.png "Transform Process")
 
 
 **Document Ingestion:**
