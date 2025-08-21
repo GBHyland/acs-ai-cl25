@@ -85,6 +85,8 @@ cp ../outputs/veh-dmg-rep.md ../summary-comparison-tool/examples/veh-dmg-rep.md
 
 ---
 
+<br>
+
 ### Run and Utilize the RAG Service
 This next step will deploy a a drop-in service that will ingest Markdown files, store chunks & captions in Elasticsearch vector search, and answers questions with retrieval-augmented generation (RAG) powered by local LLM(s).
 This service utilizes [Docker Model Runner](https://docs.docker.com/ai/model-runner/) to provide a local embedding service.  <br>
@@ -93,14 +95,7 @@ This service utilizes [Docker Model Runner](https://docs.docker.com/ai/model-run
 ![alt text](../images/ingestion.png "Ingestion Process")
 
 
-### Build the RAG Service Environment 
-1. Open a new Terminal tab in the following directory ```/alfresco-knowledge-enrichment```.
-2. Run the Docker file:
-```
-docker compose up --build
-```
-
-**The Architecture:**
+### The Architecture:
 | **Process**   | **Purpose**   | **Service**   |
 | ---           | ---           | ---           |
 | Compose File  | Deploys Alfresco Service  | [Compose.yml](../alfresco-knowledge-enrichment/compose.yaml)  |
@@ -110,7 +105,15 @@ docker compose up --build
 
 
 
-**Document Ingestion:**
+### Build the RAG Service Environment 
+1. Open a new Terminal tab in the following directory ```/alfresco-knowledge-enrichment```.
+2. Run the Docker file:
+```
+docker compose up --build
+```
+
+
+### Document Ingestion:
 Ingest the Markdown file and send chat requests.
 1. Ingest the Markdown file output from the previous Transform service using HTTPie (or other http application you're familiar with, i.e.: Postman, etc):
    - In HTTPie, start a new tab and use the following specifications for a new HTTP request:
