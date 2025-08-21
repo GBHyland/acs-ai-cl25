@@ -17,9 +17,10 @@ Please regard the instructor for a quick presentation on Knowledge Enrichment th
 - If you continue on your own, please do so at your own risk and wait for the instructor to catch up if you run into any issues.
 
 
-**The Process**
+## The Process
 ![alt text](../images/transform.png "Transform Process")
 
+---
 
 ## Alfresco Document Transformation - Hands-On
 In this hands-on demonstration we'll deploy Alfresco's Transform Engine to transform PDF docs into Markdown files to prepare for ingestion.
@@ -51,7 +52,7 @@ docker compose up --build -d
 _The application can be tested at http://localhost:8090/_. <br>
 
 
-## Ingestion & Retrieval Presentation
+### Ingestion & Retrieval Presentation
 Please regard the instructor for a quick presentation on the ingestion portion of this session. 
 
 
@@ -64,7 +65,8 @@ Please regard the instructor for a quick presentation on the ingestion portion o
 | Alfresco Markdown Transformer | Deploys the T-Engine | [Transformer (java)](../transform-service/src/main/java/org/alfresco/transform/transformer/MarkdownTransformer.java) |
 <!-- | Docling Service | Document Parsing | [Docing Service](../transform-service/src/main/java/org/alfresco/transform/service/DoclingService.java) | -->
 
-**Process the PDF to be transferred to Markdown**
+
+### Process the PDF to be transferred to Markdown
 Once the environment is running, process the sample PDF found within your directory:
 ```
 curl -X POST \
@@ -87,6 +89,8 @@ cp ../outputs/veh-dmg-rep.md ../summary-comparison-tool/examples/veh-dmg-rep.md
 This next step will deploy a a drop-in service that will ingest Markdown files, store chunks & captions in Elasticsearch vector search, and answers questions with retrieval-augmented generation (RAG) powered by local LLM(s).
 This service utilizes [Docker Model Runner](https://docs.docker.com/ai/model-runner/) to provide a local embedding service.  <br>
 
+### The Process
+![alt text](../images/ingestion.png "Ingestion Process")
 
 
 ### Build the RAG Service Environment 
