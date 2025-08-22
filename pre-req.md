@@ -18,9 +18,7 @@ Install Ollama by downloading the relevant install for your OS [HERE](https://ol
 ollama pull llava    #install ollama
 ollama pull mistral  #install mistral
 ```
-4. IDE: Latest build (Recommended IntelliJ IDEA)
-   - [IntelliJ IDEA](https://www.jetbrains.com/help/idea/installation-guide.html#)
-5. HTTPie or equivalent HTTP Request application you're familiar with (i.e.: Postman, etc)
+4. HTTPie or equivalent HTTP Request application you're familiar with (i.e.: Postman, etc)
    - [HTTPie](https://httpie.io/download)
 
 
