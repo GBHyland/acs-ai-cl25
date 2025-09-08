@@ -68,7 +68,7 @@ public class OAuthTokenManager {
      * Performs the actual client credentials token request.
      */
     private String requestToken(AppProperties.ApiProperties props, String scope) {
-        String tokenUrl = buildUrl(props.getOauthUrl(), "/connect/token");
+        String tokenUrl = buildUrl(props.getOauthUrl(), "");
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
